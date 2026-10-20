@@ -17,3 +17,6 @@ Listings/
 .agents/
 .aws/
 .codex/
+
+# Temporary PDF preview renders
+tmp/pdfs/

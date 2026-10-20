@@ -6,6 +6,8 @@ An embedded systems lab project using an **NXP LPC1768 (ARM Cortex-M3)** and **H
 
 ## Start here
 
+**New to the hardware? Download the [illustrated beginner lab guide (PDF)](output/pdf/LPC1768_Beginner_Lab_Guide.pdf).** It walks through every connection, staged power checks, Keil setup, flashing, and expected output. The complete firmware is listed and embedded in the PDF for offline use.
+
 Follow the sections in order during the lab. The full board reference is included in the expandable appendix, so connector tables and peripheral details are available in this README too.
 
 1. [Bench equipment](#bench-equipment)
