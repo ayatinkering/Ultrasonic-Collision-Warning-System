@@ -4,11 +4,7 @@ An embedded systems lab project using an **NXP LPC1768 (ARM Cortex-M3)** and **H
 
 **Status:** firmware supplied; Keil compilation and testing on the physical ALS board are pending. This is a bench prototype, not an automotive safety device.
 
-## Start here
-
-**New to the hardware? Download the [illustrated beginner lab guide (PDF)](output/pdf/LPC1768_Beginner_Lab_Guide.pdf).** It walks through every connection, staged power checks, Keil setup, flashing, and expected output. The complete firmware is listed and embedded in the PDF for offline use.
-
-Follow the sections in order during the lab. The full board reference is included in the expandable appendix, so connector tables and peripheral details are available in this README too.
+## Contents
 
 1. [Bench equipment](#bench-equipment)
 2. [Identify the connectors](#identify-the-connectors)
@@ -33,7 +29,6 @@ Follow the sections in order during the lab. The full board reference is include
 | [Revised connection manual (PDF)](docs/references/LPC1768_HCSR04_Complete_Connection_Manual_REVISED.pdf) | Original seven-page manual, preserved unchanged |
 | [LICENSE](LICENSE) | Repository license |
 
-The lab guide below consolidates the PDF's sections A–Q and the supplied board reference. Their stated sources are the ALS-SDA-ARMCTXM3-01 user manual, MIT Manipal connection/guideline/troubleshooting sheets, connector tables, placement drawing, and supplied photographs. Those underlying sources and your physical board have not been independently checked here. **Derived** pin mappings assume straight 1:1 ribbon cables; **check on board** marks unresolved details. The originals remain available to compare with this guide.
 
 ## Bench equipment
 
