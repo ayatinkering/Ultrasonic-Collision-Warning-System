@@ -1,0 +1,19 @@
+# Keil build outputs and local session state
+Objects/
+Listings/
+*.axf
+*.hex
+*.bin
+*.o
+*.obj
+*.d
+*.map
+*.lst
+*.lnp
+*.uvguix.*
+*.uvoptx
+
+# Local tool metadata
+.agents/
+.aws/
+.codex/
