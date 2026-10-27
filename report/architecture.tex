@@ -1,0 +1,39 @@
+% Standalone figure body: paste this figure* into another IEEEtran document if needed.
+\begin{figure*}[t]
+\centering
+\begin{tikzpicture}[
+  font=\footnotesize,
+  block/.style={draw,rounded corners=2pt,align=center,minimum height=9mm,text width=28mm,fill=blue!5},
+  smallblock/.style={draw,rounded corners=2pt,align=center,minimum height=8mm,text width=24mm,fill=green!6},
+  note/.style={draw,dashed,rounded corners=2pt,inner sep=5pt},
+  flow/.style={-Latex,thick},
+  node distance=5mm and 7mm]
+\node[block] (sensor) {HC-SR04\\ultrasonic sensor};
+\node[block,right=of sensor] (divider) {Echo divider\\2 k$\Omega$ over 2.2 k$\Omega$};
+\node[block,right=of divider] (mcu) {LPC1768\\Timer0 + GPIO};
+\node[block,above=of mcu] (pir) {PIR input\\display only};
+\node[block,below=of mcu] (servo) {PWM1.1\\SG90 sweep command};
+\node[block,right=of mcu] (alarm) {Current distance rule\\$\leq 30$ cm alarm};
+\node[block,right=of alarm] (outputs) {LCD, 7-segment\\buzzer, LEDs};
+\draw[flow] (sensor) -- node[above]{ECHO} (divider);
+\draw[flow] (divider) -- node[above]{P0.11} (mcu);
+\draw[flow] (mcu) -- (alarm);
+\draw[flow] (alarm) -- (outputs);
+\draw[flow] (pir) -- (mcu);
+\draw[flow] (mcu) -- (servo);
+\draw[flow] (mcu.south west) to[out=230,in=310] node[below]{P0.10 TRIG} (sensor.south east);
+\node[smallblock,below=24mm of divider] (uart) {UART0 + CN9\\9600 baud serial};
+\node[smallblock,right=of uart] (capture) {Laptop capture\\20 trials $\times$ 50 rows};
+\node[smallblock,right=of capture] (clean) {Check echo validity\\5 past distances};
+\node[smallblock,right=of clean] (model) {Ridge regression\\forecast at +0.5 s};
+\node[smallblock,right=of model] (compare) {Compare with\\constant-speed rule};
+\draw[flow] (mcu.south) |- (uart.north);
+\draw[flow] (uart) -- (capture);
+\draw[flow] (capture) -- (clean);
+\draw[flow] (clean) -- (model);
+\draw[flow] (model) -- (compare);
+\node[note,fit=(capture)(clean)(model)(compare),label={[font=\footnotesize]below:Offline analysis on laptop; no ML inference in the current firmware}] {};
+\end{tikzpicture}
+\caption{Detailed architecture of the present prototype. The upper path is the live embedded warning system. The lower path is the separate data-capture and prediction experiment. The dataset currently committed to the repository is generated practice data; physical UART capture is still pending.}
+\label{fig:architecture}
+\end{figure*}

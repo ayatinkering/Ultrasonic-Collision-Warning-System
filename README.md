@@ -1,5 +1,7 @@
 # LPC1768 ultrasonic warning + real-data ML experiment
 
+The [IEEE-format report source](report/main.tex) documents the current hardware, ML workflow, results, and 15 research references. Its [TikZ architecture diagram](report/architecture.tex) can be copied into another LaTeX report.
+
 **Current ML results are from a simulated rehearsal. No 1,000-row real board capture has been collected in this workspace.** See the [simulation results summary](output/ml/simulation_summary.md).
 
 This project uses the team's existing LPC1768 ultrasonic warning circuit and firmware. The only change to [`main.c`](main.c) is **serial logging of each ultrasonic measurement** through the board's existing CN9 connector. The servo still sweeps exactly as before; the LCD, buzzer, LEDs, seven-segment display and PIR display still behave as before. PIR is **not** used by the ML model.
