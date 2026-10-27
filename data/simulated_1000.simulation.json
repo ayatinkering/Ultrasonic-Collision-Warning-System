@@ -1,0 +1,8 @@
+{
+  "source": "SIMULATED",
+  "generated_at_utc": "2026-10-27T18:50:03.268938+00:00",
+  "seed": 1768,
+  "readings": 1000,
+  "trials": 20,
+  "notes": "Software-generated distances; not an LPC1768 capture"
+}

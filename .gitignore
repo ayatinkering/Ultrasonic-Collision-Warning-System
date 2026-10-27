@@ -20,3 +20,9 @@ Listings/
 
 # Temporary PDF preview renders
 tmp/pdfs/
+
+# Python cache and local board captures
+__pycache__/
+*.pyc
+data/real_*.csv
+data/real_*.capture.json

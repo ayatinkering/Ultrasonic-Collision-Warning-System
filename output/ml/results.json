@@ -1,0 +1,46 @@
+{
+  "data_kind": "simulated",
+  "input": "data/simulated_1000.csv",
+  "input_sha256": "f2f3b94093eeaddf2b1fa66fda3993531c3b226384781fda05b96260fcbe2753",
+  "total_readings": 1000,
+  "usable_windows": 730,
+  "trial_counts": {
+    "train": 12,
+    "validation": 4,
+    "test": 4
+  },
+  "chosen_model": "ultrasonic_only",
+  "validation_mae_cm": {
+    "ultrasonic_only": 3.529
+  },
+  "test_metrics": {
+    "constant_velocity": {
+      "mae_cm": 5.049,
+      "true_warning_windows": 15,
+      "false_warning_windows": 0,
+      "missed_zone_windows": 0,
+      "correct_nonwarning_windows": 143
+    },
+    "ultrasonic_only": {
+      "mae_cm": 4.771,
+      "true_warning_windows": 12,
+      "false_warning_windows": 0,
+      "missed_zone_windows": 3,
+      "correct_nonwarning_windows": 143
+    }
+  },
+  "models": {
+    "ultrasonic_only": {
+      "intercept": 4.4825730960390615,
+      "weights": [
+        1.7045238596515542,
+        0.636229201882628,
+        0.11596971776232975,
+        -0.5290224002622025,
+        -0.9635992761569451
+      ],
+      "alpha": 0.1,
+      "feature_count": 5
+    }
+  }
+}
